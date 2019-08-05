@@ -13,10 +13,10 @@ ENV REACT_APP_USERS_SERVICE_URL $REACT_APP_USERS_SERVICE_URL
 
 ADD package.json /usr/src/app/package.json
 RUN npm install --silent
-RUN npm install pushstate-server -g --silent
+RUN npm install serve -g --silent
 
 ADD . /usr/src/app
 
 RUN npm run build
 
-CMD ["pushstate-server", "build"]
+CMD ["serve", "-s", "build"]

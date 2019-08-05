@@ -17,4 +17,6 @@ RUN npm install pushstate-server -g --silent
 
 ADD . /usr/src/app
 
+RUN npm run build
+
 CMD ["pushstate-server", "build"]
